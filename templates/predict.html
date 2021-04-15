@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}{{ y_pred }}{% endblock %} <!-- title -->
+{% block content %}
+
+<div class="bg-light text-dark p-2">
+    <h1>Hasil : {{ y_pred }}</h1>
+</div>
+<img class="rounded m-2" src="{{ url_for('static', filename=img) }}" alt="to_predict" width="250"/>
+<table class="mx-auto table table-light table-striped" style="width: 25rem;">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Probabilitas(%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Batu</td>
+            <td>{{ batu }}</td>
+        </tr>
+        <tr>
+            <td>Kertas</td>
+            <td>{{ kertas }}</td>
+        </tr>
+        <tr>
+            <td>Gunting</td>
+            <td>{{ gunting }}</td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-secondary" href="/">Kembali</a>
+
+{% endblock %}

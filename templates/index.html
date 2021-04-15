@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}TuTasTing{% endblock %} <!-- title -->
+{% block content %}
+
+<div class="bg-light text-dark p-2">
+    <h1>Prediksi Batu Kertas Gunting</h1>
+</div>
+<span>Contoh gambar valid : </span>
+<div>
+    <img class="rounded shadow-sm m-1 my-2" src="{{ url_for('static', filename='images/example_batu.jpg') }}" width="125" height="125" alt="example_batu"/>
+    <img class="rounded shadow-sm m-1 my-2" src="{{ url_for('static', filename='images/example_kertas.jpg') }}" width="125" height="125" alt="example_kertas"/>
+    <img class="rounded shadow-sm m-1 my-2" src="{{ url_for('static', filename='images/example_gunting.jpg') }}" width="125" height="125" alt="example_gunting"/>
+</div>
+<form action="/predict" method="POST" enctype="multipart/form-data">
+    <input class="btn btn-secondary my-1 form-control-file border border-light text-dark" type="file" name="file"/>
+    <input class="btn btn-light my-1" type="submit"/>
+</form>
+<strong>CATATAN</strong>
+<div class="card mx-auto my-2 shadow-sm" style="width: 25rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Wajib melampirkan gambar berekstensi (jpg|png)</li>
+        <li class="list-group-item">Posisi tangan kanan menghadap ke kiri</li>
+        <li class="list-group-item">Menggunakan background polos</li>
+    </ul>
+</div>
+
+{% endblock %}
